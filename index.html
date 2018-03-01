@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8">
+  <title>MOVIE API</title>
+  <link href="flex-grid.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="index.css">
+
+  <body>
+    <nav role='navigation'>
+      <div class='nav-container'>
+        <form class='form-submit'>
+          <fieldset>
+            <legend for='search-bar'>Search For Any Movie</legend>
+            <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title">
+          </fieldset>
+          <button class='js-search-btn'>Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class='row'>
+      <div class='col-6 border-6'>
+        <div class='movie-poster'>
+          <h3 class='movie-title'></h3>
+          <div class='poster js-poster'></div>
+        </div>
+      </div>
+      <div class='col-6 border-6'>
+        <h3>Movie Information</h3>
+        <div class="movie-description">
+
+        </div>
+        <div class="movie-actors">
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-12 border-12'>
+        <h3>Movie Theaters and Show Time</h3>
+        <div class="movie-location">
+
+        </div>
+      </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+
+</html>

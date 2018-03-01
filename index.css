@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* iPhone 4 range */
+
+@media (min-width:0px) and (max-width:480px) {
+    html {
+        font-size: 1.0em;
+    }
+}
+
+/* larger than iPhone landscape, an in the iPad portrait range */
+
+@media (min-width:481px) and (max-width:768px) {
+    html {
+        font-size: 1.1em;
+    }
+}
+
+/* bigger than iPad portrait  */
+
+@media (min-width:769px) {
+    html {
+        font-size: 1.2em;
+    }
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+nav {
+    margin-top: 10px;
+    padding: 10px 20px;
+    display: fixed;
+    background-color: rgb(39, 37, 37);
+}
+
+.nav-container {
+    width: 80%;
+    margin: 10px auto;
+}
+
+legend {
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+input[type='text'] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 35px 5px 35px;
+}
+
+fieldset {
+    border: 0px;
+}
+
+.border-6 {
+    height: 550px;
+}
+
+.border-12 {
+    height: 250px;
+}
+
+.border-6,
+.border-12 {
+    border: 5px solid black;
+    margin-top: 5px;
+}
+
+.movie-poster {
+    width: 70%;
+    margin: 15px auto;
+    
+}
+
+.poster {
+    padding: 0;
+    margin: 0;
+}
+
+.movie-title {
+    text-align: center;
+    padding-bottom: 5px;
+}
