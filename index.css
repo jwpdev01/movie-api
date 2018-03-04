@@ -33,23 +33,24 @@ html {
 }
 
 body {
-    background-color: antiquewhite;
+    /*background: url('https://getreelcinemas.com//wp-content/uploads/2015/02/Background-Narrow.jpg') no-repeat fixed center;*/
+    background: url('https://www.tottington.bury.sch.uk/wp-content/uploads/CinemaBackground.jpg') no-repeat fixed center;
+    background-size: 100%;
 }
 
 nav {
     margin-top: 10px;
     padding: 10px 20px;
     display: fixed;
-    background-color: rgb(39, 37, 37);
-}
+ }
 
 .nav-container {
     width: 80%;
-    margin: 10px auto;
+    margin: 5px auto;
 }
 
 legend {
-    color: white;
+    color: black;
     display: block;
     width: 100%;
     text-align: center;
@@ -65,32 +66,47 @@ fieldset {
     border: 0px;
 }
 
+.radio-search-type {
+    display: inline-block;
+    color: black;
+    font-size: .8em;
+}
+
+.js-radio-button {
+    display:inline;
+    margin-left: 5px;
+}
+
 .border-6 {
-    height: 550px;
 }
 
 .border-12 {
-    height: 250px;
 }
 
 .border-6,
 .border-12 {
-    border: 5px solid black;
-    margin-top: 5px;
 }
 
 .movie-poster {
     width: 70%;
-    margin: 15px auto;
-    
+    margin: 15px auto;    
 }
 
 .poster {
-    padding: 0;
-    margin: 0;
 }
 
-.movie-title {
+.movie-title,
+.movie-information {
     text-align: center;
-    padding-bottom: 5px;
 }
+
+img {
+}
+
+.error {
+    text-align: center;
+    font-size: 3em;
+    color: red;
+    font-weight: bold;
+}
+
