@@ -8,45 +8,49 @@
   <link rel="stylesheet" href="index.css">
 
   <body>
-      <nav role='navigation'>
-          <div class='nav-container'>
-            <form class='form-submit'>
-              <fieldset>
-                <legend for='search-bar'>Search For Any Movie</legend>
-                <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title">
-              </fieldset>
-             <!-- <div class='radio-search-type'>Choose how you want to search for the data:
+    <nav role='navigation'>
+      <div class='nav-container'>
+        <form class='form-submit'>
+          <fieldset>
+            <legend for='search-bar'>Search For Any Movie</legend>
+            <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title">
+          </fieldset>
+          <!-- <div class='radio-search-type'>Choose how you want to search for the data:
               <div class='js-radio-button'>
                 <input type="radio" name="search-types" value="ajax" checked> AJAX
                 <input type="radio" name="search-types" value="json"> getJSON
               </div>
             </div> -->
-            </form>
-          </div>
-        </nav>
-      <div class="row">
-        <div class="column-3">
+        </form>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="column-3 left">
+        <div class="video container">
           <span class='vid-1'></span>
           <span class='vid-2'></span>
           <span class='vid-3'></span>
         </div>
-        <div class="column-6">
-          <div class='movie container'>
+      </div>
+      <div class="column-6">
+        <div class='movie container'>
           <div class='movie-title'></div>
           <div class='js-poster'></div>
-          <div class='movie-description'></div>      
-          <div class='movie-actors'></div>                       
+          <div class='movie-description'></div>
+          <div class='movie-actors'></div>
         </div>
-        </div>
-        <div class="column-3">
+      </div>
+      <div class="column-3 right">
+        <div class="video container">
           <span class='vid-4'></span>
           <span class='vid-5'></span>
           <span class='vid-6'></span>
+          <div class="video container"></div>
         </div>
       </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
-    <script src="index.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
+      <script src="index.js"></script>
   </body>
 
 </html>
