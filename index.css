@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 
 html {
@@ -36,6 +37,7 @@ body {
     /*background: url('https://getreelcinemas.com//wp-content/uploads/2015/02/Background-Narrow.jpg') no-repeat fixed center;*/
     background: url('https://www.tottington.bury.sch.uk/wp-content/uploads/CinemaBackground.jpg') no-repeat fixed center;
     background-size: 100%;
+    color: white;
 }
 
 nav {
@@ -66,47 +68,59 @@ fieldset {
     border: 0px;
 }
 
-.radio-search-type {
-    display: inline-block;
-    color: black;
-    font-size: .8em;
+/* Create three equal columns that floats next to each other */
+.column-3 {
+    float: left;
+    width: 15%;
+    height: 800px; /* Should be removed. Only for demonstration */
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.js-radio-button {
-    display:inline;
-    margin-left: 5px;
+.column-6 {
+    float: left;
+    width: 65%;
+    padding: 10px;
+    height: 800px; /* Should be removed. Only for demonstration */
 }
 
-.border-6 {
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.border-12 {
+.movie-container {
+    width: 75%;
+ }
+
+.movie-title {
+    text-align: center;
 }
 
-.border-6,
-.border-12 {
-}
-
-.movie-poster {
-    width: 70%;
+.js-poster {
+    width: 300px;
+    height: 400px;
     margin: 15px auto;    
 }
 
-.poster {
+.movie-plot {
+    margin-top: 25px;
+
 }
 
-.movie-title,
-.movie-information {
-    text-align: center;
+.thumb {
+    display: block;
+    width: 200px;
+    height: 200px;
 }
 
-img {
-}
 
-.error {
-    text-align: center;
-    font-size: 3em;
-    color: red;
-    font-weight: bold;
-}
 
+li {
+    display: inline;
+    list-style: none;
+}
