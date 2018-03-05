@@ -41,14 +41,13 @@ body {
 }
 
 nav {
-    margin-top: 10px;
-    padding: 10px 20px;
+    padding: 0 20px 10px 0;
     display: fixed;
  }
 
 .nav-container {
     width: 80%;
-    margin: 5px auto;
+    margin: 0 auto;
 }
 
 legend {
@@ -122,6 +121,8 @@ fieldset {
 .thumb {    
     width: 200px;
     height: 200px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 li {

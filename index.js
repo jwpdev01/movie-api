@@ -120,6 +120,8 @@ function getResponse(request) {
         let searchResults = response.result.items;
         let vidtag = "";
         console.log(searchResults);
+        resetVideoContainers();
+
         for (let counter = 0; counter < searchResults.length; counter++) {
             let item = searchResults[counter];
             vidtag = '.vid-' + (counter + 1);
@@ -134,4 +136,14 @@ function getResponse(request) {
                 `);
         }
     });
+}
+
+function resetVideoContainers() {
+    $('.vid-1').empty();
+    $('.vid-2').empty();
+    $('.vid-3').empty();
+    $('.vid-4').empty();
+    $('.vid-5').empty();
+    $('.vid-6').empty();
+
 }
