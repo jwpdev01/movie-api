@@ -9,58 +9,26 @@ html {
 }
 
 /* iPhone 4 range */
+
 @media (min-width:0px) and (max-width:480px) {
     html {
         font-size: 1.0em;
     }
-
-    .thumb {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-    }
-    
-    .js-poster {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-    }
 }
 
 /* larger than iPhone landscape, an in the iPad portrait range */
-@media (min-width:481px) and (max-width:768px) {    html {
-        font-size: 1.1em;
-    }
 
-    .thumb {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-    }
-    
-    .js-poster {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
+@media (min-width:481px) and (max-width:768px) {
+    html {
+        font-size: 1.1em;
     }
 }
 
 /* bigger than iPad portrait  */
+
 @media (min-width:769px) {
     html {
         font-size: 1.2em;
-    }
-
-    .thumb {
-        display: block;
-        margin: 10px auto;
-        width: 85%;
-    }
-    
-    .js-poster {
-        display: block;
-        margin: 10px auto;
-        width: 50%;
     }
 }
 
@@ -90,29 +58,21 @@ fieldset {
     border: 0px;
 }
 
-img { 
-
+img {
     margin: 20px 0;
 }
 
 .title {
     font-size: .8em;
     text-align: center;
-    
-}
-
-header {
-    border: 1px solid gold;
 }
 
 .movie-container {
-      margin-top: 20px;
-      border: 1px solid gold;
+    margin-top: 20px;
 }
 
 .video-container {
     margin-top: 80px;
-    border: 1px solid gold;
 }
 
 ul {
@@ -126,15 +86,14 @@ li {
     padding-right: 20px;
 }
 
-.movie-title {    
-   width: 50%;
-   margin: 0 auto;
+.movie-title {
+    width: 100%;
+    text-align: center;
 }
 
 .movie-description {
     text-align: center;
     padding: 0 20px;
-    
 }
 
 .movie-actors {
@@ -146,13 +105,29 @@ li {
 }
 
 .error {
-     margin-top: 40px;
+    margin-top: 40px;
     text-align: center;
-    color:white;
+    color: white;
     font-size: 3em;
-    font-weight:bold;
+    font-weight: bold;
 }
 
+.thumb {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
 
+.js-poster {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
 
-
+button {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;;
+    color: black;
+}
