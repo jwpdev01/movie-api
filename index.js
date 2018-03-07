@@ -118,7 +118,7 @@ function getRequest(q, paramPart, paramMaxResults, paramPageToken) {
 
 
 function getResponse(request) {
-    $('#results').empty();
+    $('.video-container').empty();
     let counter = 0;
 
     request.execute(function (response) {
@@ -129,13 +129,15 @@ function getResponse(request) {
 
         for (let counter = 0; counter < searchResults.length; counter++) {
             let item = searchResults[counter];
-             $('.vid').append(`
+             $('.video-container').append(`
+             <div class="vid">
                 <div class='img-link'>
                     <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
                         <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt=${item.snippet.description}">
                     </a>
                 </div>
                 <div class='title'>${item.snippet.title}</div>
+                </div>
                 `);
         }
     });
