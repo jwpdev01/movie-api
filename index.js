@@ -46,19 +46,24 @@ function updateMovieResults(data) {
     console.log(data);
     if (data.Response !== "False") {
         $('.movie-information').html(`Movie Synopsis`)
-
+        clearErrorMessage();
         setMovieTitle(data.Title, data.Year);
         setMoviePosterImage(data.Poster);
         setMoviePlot(data.Plot);
         setMovieActorsList(buildActorList(data.Actors.split(', ')));
         setupGAPIClient(); /* display youtube video */
     } else {
+        console.log(data.Error);
         setErrorMessage(data.Error);
     }
 }
 
 function setErrorMessage(errorMessage) {
     $('.movie-misc').html(`<div class='error'>${errorMessage}</div>`);
+}
+
+function clearErrorMessage() {
+    $('.movie-misc').html(`<div class='error'></div>`);
 }
 
 function setMovieTitle(title, year) {
@@ -99,7 +104,7 @@ function setupGAPIClient(e) {
 }
 
 function makeRequest() {
-    getResponse(getRequest(query, 'snippet, id', 6, pageToken));
+    getResponse(getRequest(query, 'snippet, id', 3, pageToken));
 }
 
 function getRequest(q, paramPart, paramMaxResults, paramPageToken) {
@@ -124,9 +129,7 @@ function getResponse(request) {
 
         for (let counter = 0; counter < searchResults.length; counter++) {
             let item = searchResults[counter];
-            vidtag = '.vid-' + (counter + 1);
-            console.log(vidtag);
-            $(vidtag).append(`
+             $('.vid').append(`
                 <div class='img-link'>
                     <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
                         <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt=${item.snippet.description}">
@@ -139,11 +142,5 @@ function getResponse(request) {
 }
 
 function resetVideoContainers() {
-    $('.vid-1').empty();
-    $('.vid-2').empty();
-    $('.vid-3').empty();
-    $('.vid-4').empty();
-    $('.vid-5').empty();
-    $('.vid-6').empty();
-
+    $('.vid').empty();
 }
