@@ -11,42 +11,44 @@
   <link rel="stylesheet" href="index.css">
 
   <body>
-    <header>
-      <div class="row">
-        <div class="col-12">
+    <header role='header'>
+      <!--<div class="row">
+        <div class="col-12">-->
           <form class='form-submit'>
             <fieldset>
-              <legend for='search-bar'>Search For Any Movie</legend>
-              <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title"><button>submit</button>
+              <div class='search'>
+                <legend for='search-bar'>Search For Any Movie</legend>
+                <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title">
+                <button>submit</button>
+              </div>
             </fieldset>
-        </div>
-      </div>
+          </form>
+        <!--</div>
+      </div>-->
     </header>
-    <div class="row">
-      <div class="col-12">
-        <div class="movie-misc"></div>
-      </div>
-    </div>
-    <div class="row">
 
-      <div class="col-8">
-        <div class='movie-container'>
+    <main role='main'>
+      <div class="row">
 
-          <div class='movie-title'></div>
-          <div class='js-poster'></div>
-          <div class='movie-actors'></div>
-          <div class='movie-description'></div>
+        <div class="col-9">
+          <div class='movie-container'>
+            <div class="movie-misc"></div>
+            <div class='movie-title'></div>
+            <div class='js-poster'></div>
+            <div class='movie-actors'></div>
+            <div class='movie-description'></div>
 
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="video-container"></div>
         </div>
       </div>
-
-      <div class="col-4">
-        <div class="video-container"></div>
-      </div>
-    </div>
-    </div>
+    </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">
+    </script>
     <script src="index.js"></script>
   </body>
 

@@ -9,6 +9,7 @@ let query;
 $(document).ready(function () {
     $('.form-submit').on('submit', function (e) {
         e.preventDefault();
+        clearAllDivs();
         getAPIs($('input[name=search-types]:checked').val());
     });
 
@@ -45,7 +46,8 @@ function queryOMDABPI_GETJQUERY(searchText) {
 function updateMovieResults(data) {
     console.log(data);
     if (data.Response !== "False") {
-        $('.movie-information').html(`Movie Synopsis`)
+        $('.movie-information').html(`Movie Synopsis`);
+    
         clearErrorMessage();
         setMovieTitle(data.Title, data.Year);
         setMoviePosterImage(data.Poster);
@@ -56,6 +58,20 @@ function updateMovieResults(data) {
         console.log(data.Error);
         setErrorMessage(data.Error);
     }
+}
+
+function clearAllDivs(){
+    $('.movie-misc').empty();
+    $('.movie-title').empty();
+    $('.js-poster').empty();
+    $('.movie-actors').empty();
+    $('.movie-description').empty();
+    $('.video-container').empty();
+    $('.movie-poster').empty();
+    $('.movie-actors').empty();
+    $('.vid').empty();
+    $('.img-link').empty();
+    $('.thumb').empty();
 }
 
 function setErrorMessage(errorMessage) {
