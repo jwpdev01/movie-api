@@ -9,6 +9,7 @@ let query;
 $(document).ready(function () {
     $('.form-submit').on('submit', function (e) {
         e.preventDefault();
+        clearAllDivs();
         getAPIs($('input[name=search-types]:checked').val());
     });
 
@@ -45,7 +46,8 @@ function queryOMDABPI_GETJQUERY(searchText) {
 function updateMovieResults(data) {
     console.log(data);
     if (data.Response !== "False") {
-        $('.movie-information').html(`Movie Synopsis`)
+        $('.movie-information').html(`Movie Synopsis`);
+    
         clearErrorMessage();
         setMovieTitle(data.Title, data.Year);
         setMoviePosterImage(data.Poster);
@@ -56,6 +58,20 @@ function updateMovieResults(data) {
         console.log(data.Error);
         setErrorMessage(data.Error);
     }
+}
+
+function clearAllDivs(){
+    $('.movie-misc').empty();
+    $('.movie-title').empty();
+    $('.js-poster').empty();
+    $('.movie-actors').empty();
+    $('.movie-description').empty();
+    $('.video-container').empty();
+    $('.movie-poster').empty();
+    $('.movie-actors').empty();
+    $('.vid').empty();
+    $('.img-link').empty();
+    $('.thumb').empty();
 }
 
 function setErrorMessage(errorMessage) {
@@ -75,11 +91,11 @@ function setMoviePosterImage(posterImage) {
 }
 
 function setMoviePlot(moviePlot) {
-    $('.movie-description').html(`<div class='movie-plot'>${moviePlot}</div>`);
+    $('.movie-description').html(`<h4>Movie Plot</h4><div class='movie-plot'>${moviePlot}</div>`);
 }
 
 function buildActorList(actors) {
-    let htmlText = "<ul>";
+    let htmlText = "<ul><li><h4>Lead Actors</h4></li>";
 
     for (let x = 0; x < actors.length; x++) {
         htmlText = htmlText + "<li>" + actors[x] + "</li>";
@@ -118,7 +134,7 @@ function getRequest(q, paramPart, paramMaxResults, paramPageToken) {
 
 
 function getResponse(request) {
-    $('#results').empty();
+    $('.video-container').empty();
     let counter = 0;
 
     request.execute(function (response) {
@@ -129,13 +145,15 @@ function getResponse(request) {
 
         for (let counter = 0; counter < searchResults.length; counter++) {
             let item = searchResults[counter];
-             $('.vid').append(`
+             $('.video-container').append(`
+             <div class="vid">
                 <div class='img-link'>
                     <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
                         <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt=${item.snippet.description}">
                     </a>
                 </div>
                 <div class='title'>${item.snippet.title}</div>
+                </div>
                 `);
         }
     });

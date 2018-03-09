@@ -1,9 +1,3 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 html {
     font-size: 62.5%;
 }
@@ -14,6 +8,29 @@ html {
     html {
         font-size: 1.0em;
     }
+    .search {
+        width: 100%;
+        margin: 0 auto;
+    }
+    input[type='text'] {
+        width: 75%;
+        padding: 3px;
+        margin-top: 5px;
+    }
+    .js-poster {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .movie-poster {
+        width: 100%;
+        height: 100%;
+        border: 5px double white;
+    }
+    .vid {
+        width: 100%;
+        margin: 10px auto;
+        border: 5px double white;
+    }
 }
 
 /* larger than iPhone landscape, an in the iPad portrait range */
@@ -22,112 +39,160 @@ html {
     html {
         font-size: 1.1em;
     }
+    .search {
+        width: 70%;
+        margin: 0 auto;
+    }
+    input[type='text'] {
+        width: 80%;
+        padding: 3px;
+    }
+    button {
+        margin-left: 5px;
+        padding: 3px;
+    }
+    button {
+        margin-left: 5px;
+        padding: 3px;
+    }
+    .js-poster {
+        width: 85%;
+        margin: 0 auto;
+    }
+    .movie-poster {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 5px double white;
+    }
+    .vid {
+        width: 100%;
+        margin: 0 auto;
+        border: 5px double white;
+        padding: 5px 0;
+        margin-bottom: 10px;
+    }
 }
 
 /* bigger than iPad portrait  */
 
 @media (min-width:769px) {
     html {
-        font-size: 1.2em;
+        font-size: 1.5em;
+    }
+    .container {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .search {
+        width: 50%;
+        margin: 0 auto;
+    }
+    input[type='text'] {
+        width: 70%;
+        padding: 10px;
+        margin-top: 5px;
+    }
+    button {
+        margin-left: 5px;
+        padding: 10px;
+    }
+    .js-poster {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .movie-poster {
+        display: block;
+        border: 5px double white;
+        margin: 0 auto;
+    }
+    .movie-plot {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .vid {
+        width: 100%;
+        margin: 0px auto;
+        border: 5px double white;
+    }
+    .title {
+        font-size: .8em;
     }
 }
 
 body {
-    background-color: #053d70;
     font-family: "Roboto", sans-serif;
-    color: #E0FFFF;
+    color: white;
 }
 
-header {
-    margin-top: 20px;
-}
-
-legend {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-input[type='text'] {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 35px 5px 35px;
+html {
+    background: url('https://getreelcinemas.com//wp-content/uploads/2015/02/Background-Narrow.jpg') no-repeat fixed center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 fieldset {
     border: 0px;
 }
 
-img {
-    margin: 20px 0;
-}
-
-.title {
-    font-size: .8em;
+legend {
     text-align: center;
 }
 
-.movie-container {
-    margin-top: 20px;
+.movie-title,
+.app-detail {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
-.video-container {
-    margin-top: 80px;
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    margin: 0;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.app-detail {
+    font-size: .7em;
+    color: lightgoldenrodyellow;
+    margin-bottom: 5px;
 }
 
 ul {
+    width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
 }
 
 li {
-    display: inline;
     list-style: none;
-    padding-right: 20px;
-}
-
-.movie-title {
-    width: 100%;
-    text-align: center;
-}
-
-.movie-description {
-    text-align: center;
-    padding: 0 20px;
-}
-
-.movie-actors {
-    color: #cf9d6b;
 }
 
 .thumb {
-    border: 2px solid gold;
+    width: 100%;
+}
+
+.title {
+    background-color: black;
+    text-align: center;
+    color: white;
 }
 
 .error {
-    margin-top: 40px;
-    text-align: center;
-    color: white;
     font-size: 3em;
-    font-weight: bold;
-}
-
-.thumb {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-}
-
-.js-poster {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-}
-
-button {
-    display: inline-block;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: white;;
-    color: black;
+    text-align: center;
 }
