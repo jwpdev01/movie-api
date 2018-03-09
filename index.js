@@ -91,11 +91,11 @@ function setMoviePosterImage(posterImage) {
 }
 
 function setMoviePlot(moviePlot) {
-    $('.movie-description').html(`<div class='movie-plot'>${moviePlot}</div>`);
+    $('.movie-description').html(`<h4>Movie Plot</h4><div class='movie-plot'>${moviePlot}</div>`);
 }
 
 function buildActorList(actors) {
-    let htmlText = "<ul>";
+    let htmlText = "<ul><li><h4>Lead Actors</h4></li>";
 
     for (let x = 0; x < actors.length; x++) {
         htmlText = htmlText + "<li>" + actors[x] + "</li>";

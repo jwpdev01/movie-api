@@ -17,7 +17,8 @@
           <form class='form-submit'>
             <fieldset>
               <div class='search'>
-                <legend for='search-bar'>Search For Any Movie</legend>
+                <legend for='search-bar'><h1>Movie Search</h1></legend>
+                <div class='app-detail'>Enter a movie title to search for movie information, actor's names and watch trailers.</div>
                 <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title">
                 <button>submit</button>
               </div>
@@ -27,13 +28,19 @@
       </div>-->
     </header>
 
-    <main role='main'>
+    <main class='container' role='main'>
       <div class="row">
-
-        <div class="col-9">
+        <div class="col col-12">
+          <div class='movie-header'>
+              <div class="movie-misc"></div>
+              <div class='movie-title'></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col col-9">
           <div class='movie-container'>
-            <div class="movie-misc"></div>
-            <div class='movie-title'></div>
+
             <div class='js-poster'></div>
             <div class='movie-actors'></div>
             <div class='movie-description'></div>
@@ -41,7 +48,7 @@
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col col-3">
           <div class="video-container"></div>
         </div>
       </div>
