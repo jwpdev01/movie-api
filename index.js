@@ -91,7 +91,7 @@ function setMovieTitle(title, year) {
 }
 
 function setMoviePosterImage(posterImage) {
-    $('.js-poster').html(`<img src='${posterImage} alt='movie poster' class='movie-poster'>`);
+    $('.js-poster').html(`<img src='${posterImage}' alt='movie-poster' class='movie-poster'>`);
 }
 
 function setMoviePlot(moviePlot) {
@@ -164,7 +164,7 @@ function getResponse(request) {
             $('.video-container').append(`
                 <div class='img-link'>
                     <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">            
-                        <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt=${item.snippet.description}">
+                        <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.description}">
                     </a>
                 </div>
                 <div class='title'>${item.snippet.title}</div>
