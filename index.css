@@ -1,3 +1,8 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -8,28 +13,90 @@ html {
     html {
         font-size: 1.0em;
     }
-    .search {
+    .show-mobile {
+        display: block;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    .app-detail {
+        font-size: .8em;
+        text-align: center;
+        margin: 10px 0;
+    }
+    fieldset {
         width: 100%;
         margin: 0 auto;
     }
-    input[type='text'] {
-        width: 75%;
-        padding: 3px;
-        margin-top: 5px;
+    legend {
+        font-size: .8em;
     }
+    .search-bar {
+        width: 75%;
+    }
+    main,
+    header {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    h4 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: underline;
+    }
+
     .js-poster {
-        width: 75%;
+        width: 76%;
         margin: 0 auto;
     }
-    .movie-poster {
-        width: 100%;
-        height: 100%;
+
+    
+    .js-poster,
+    .thumb {
         border: 5px double white;
     }
-    .vid {
+
+    .img-link {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .thumb {
         width: 100%;
-        margin: 10px auto;
-        border: 5px double white;
+        margin: 0 auto;
+    }
+
+    .movie-title {
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .movie-actors,
+    .movie-rated,
+    .movie-runtime,
+    .movie-description {
+        font-size: .9em;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    .movie-runtime {
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: .9em;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    hr.style-eight {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
     }
 }
 
@@ -39,38 +106,83 @@ html {
     html {
         font-size: 1.1em;
     }
-    .search {
+    .show-mobile {
+        display: block;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    .app-detail {
+        font-size: .8em;
+        text-align: center;
+        margin: 10px 0;
+    }
+    fieldset {
         width: 70%;
         margin: 0 auto;
     }
-    input[type='text'] {
-        width: 80%;
-        padding: 3px;
+    legend {
+        font-size: .8em;
     }
-    button {
-        margin-left: 5px;
-        padding: 3px;
-    }
-    button {
-        margin-left: 5px;
-        padding: 3px;
-    }
-    .js-poster {
+    .search-bar {
         width: 85%;
-        margin: 0 auto;
     }
-    .movie-poster {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: 5px double white;
-    }
-    .vid {
+    main,
+    header {
         width: 100%;
         margin: 0 auto;
+    }
+
+    h4 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .js-poster {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .img-link {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .thumb {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .movie-title {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .movie-actors,
+    .movie-rated,
+    .movie-runtime,
+    .movie-description {
+        font-size: .9em;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: .9em;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    .js-poster,
+    .thumb {
         border: 5px double white;
-        padding: 5px 0;
-        margin-bottom: 10px;
+    }
+
+    hr.style-eight {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
     }
 }
 
@@ -80,49 +192,85 @@ html {
     html {
         font-size: 1.5em;
     }
-    .container {
-        width: 1000px;
+    .show-mobile {
+        display: none;
+    }
+    .hide-mobile {
+        display: block;
+    }
+    .app-detail {
+        font-size: .8em;
+        text-align: center;
+        margin: 10px 0;
+    }
+    fieldset {
+        width: 55%;
         margin: 0 auto;
     }
-    .search {
-        width: 50%;
-        margin: 0 auto;
+    legend {
+        font-size: .8em;
     }
-    input[type='text'] {
+    .search-bar {
+        width: 90%;
+    }
+    main,
+    header {
         width: 70%;
-        padding: 10px;
-        margin-top: 5px;
-    }
-    button {
-        margin-left: 5px;
-        padding: 10px;
+        margin: 0 auto;
     }
     .js-poster {
-        width: 100%;
+        width: 70%;
         margin: 0 auto;
     }
-    .movie-poster {
-        display: block;
-        border: 5px double white;
-        margin: 0 auto;
-    }
-    .movie-plot {
+    .img-link {
         width: 80%;
         margin: 0 auto;
     }
-    .vid {
+    .thumb {
         width: 100%;
-        margin: 0px auto;
-        border: 5px double white;
+        margin: 0 auto;
     }
     .title {
-        font-size: .8em;
+        text-align: center;
+        font-size: .6em;
     }
-}
 
-body {
-    font-family: "Roboto", sans-serif;
-    color: white;
+    h4 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+
+    .movie-title {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .movie-actors,
+    .movie-rated,
+    .movie-runtime,
+    .movie-description {
+        font-size: .9em;
+        text-align: center;
+    }
+    .movie-rated,
+    .movie-runtime {
+        text-align: center;
+    }
+
+    .js-poster,
+    .thumb {
+        border: 5px double white;
+    }
+
+
+
+    hr.style-eight {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    }
 }
 
 html {
@@ -137,62 +285,23 @@ html {
     right: 0;
 }
 
-fieldset {
-    border: 0px;
-}
-
-legend {
+.error {
+    margin-top: 50px;
+    font-size: 3em;
     text-align: center;
-}
-
-.movie-title,
-.app-detail {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 10px;
+    color: red;
 }
 
 h1 {
-    margin: 0;
-    padding: 0;
-}
-
-h4 {
-    margin: 0;
-    padding: 5px 0 5px 0;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.app-detail {
-    font-size: .7em;
-    color: lightgoldenrodyellow;
-    margin-bottom: 5px;
-}
-
-ul {
-    width: 100%;
     text-align: center;
     margin: 0;
     padding: 0;
-    margin-bottom: 15px;
 }
 
-li {
-    list-style: none;
-}
-
-.thumb {
+.movie-poster {
     width: 100%;
 }
 
-.title {
-    background-color: black;
-    text-align: center;
-    color: white;
-}
-
-.error {
-    font-size: 3em;
-    text-align: center;
+.movie-actors {
+    margin: 5px 0 10px 0;
 }
