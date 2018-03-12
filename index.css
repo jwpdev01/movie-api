@@ -54,7 +54,7 @@ html {
     }
 
     
-    .js-poster,
+    .movie-poster,
     .thumb {
         border: 5px double white;
     }
@@ -174,7 +174,7 @@ html {
         padding-bottom: 15px;
     }
 
-    .js-poster,
+    .movie-poster,
     .thumb {
         border: 5px double white;
     }
@@ -259,7 +259,7 @@ html {
         text-align: center;
     }
 
-    .js-poster,
+    .movie-poster,
     .thumb {
         border: 5px double white;
     }
