@@ -77,11 +77,11 @@ function clearAllDivs() {
 }
 
 function setErrorMessage(errorMessage) {
-    $('.movie-misc').html(`<div class='error'>${errorMessage}</div>`);
+    $('.movie-title').html(`<div class='error'>${errorMessage} Please try again.</div>`);
 }
 
 function clearErrorMessage() {
-    $('.movie-misc').html('<div class=\'error\'></div>');
+    $('.movie-title').html('<div class=\'error\'></div>');
 }
 
 
