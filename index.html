@@ -6,51 +6,62 @@
   <title>MOVIE API</title>
   <!-- Responsive viewport tag, tells small screens that it's responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="flex-grid.css">
   <link rel="stylesheet" href="index.css">
 
   <body>
-    <header role='header'>
-      <!--<div class="row">
-        <div class="col-12">-->
-          <form class='form-submit'>
-            <fieldset>
-              <div class='search'>
-                <legend for='search-bar'><h1>Movie Search</h1></legend>
-                <div class='app-detail'>Enter a movie title to search for movie information, actor's names and watch trailers.</div>
-                <input type='text' class='search-bar' name='search-bar' placeholder="enter a movie title">
-                <button>submit</button>
-              </div>
-            </fieldset>
-          </form>
-        <!--</div>
-      </div>-->
+    <header role='banner'>
+      <div class="col-12">
+
+        <h1>Movie Search</h1>
+        <div class='app-detail'>Search movie titles for plots, actors and trailers.</div>
+        <form class='form-submit'>
+          <fieldset>
+            <legend for='search-bar' >Enter a movie title</legend>
+            <div class='search'>
+              <input type='text' aria-label='enter a movie title to search' class='search-bar' name='search-bar' placeholder="enter a movie title" />
+              <button>submit</button>
+            </div>
+          </fieldset>
+        </form>
     </header>
 
     <main class='container' role='main'>
       <div class="row">
         <div class="col col-12">
           <div class='movie-header'>
-              <div class="movie-misc"></div>
-              <div class='movie-title'></div>
+            <div class='movie-title'></div>
           </div>
         </div>
       </div>
+
       <div class="row">
-       <div class="col col-9">
+
+        <div class="col col-3 hide-mobile">
+          <div class='movie-actors'></div>
+          <div class='movie-description'></div>
+          <div class='movie-rated'></div>
+          <div class='movie-runtime'></div>
+        </div>
+
+        <div class="col col-6">
           <div class='movie-container'>
-
             <div class='js-poster'></div>
-            <div class='movie-actors'></div>
-            <div class='movie-description'></div>
-
           </div>
+        </div>
+
+        <div class="col col-3 show-mobile">
+          <div class='movie-actors'></div>
+          <div class='movie-description'></div>
+          <div class='movie-rated'></div>
+          <div class='movie-runtime'></div>
         </div>
 
         <div class="col col-3">
           <div class="video-container"></div>
         </div>
+
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

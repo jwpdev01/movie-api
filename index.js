@@ -1,9 +1,8 @@
 const OMDBAPI = 'https://www.omdbapi.com/?apikey=15e15451&t=';
-const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/channel/";
-const YOUTUBE_API_KEY = "AIzaSyAFrScEUoPW6ZBrHIvuAeEDsplHAqS_gl0";
+//const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel/';
+const YOUTUBE_API_KEY = 'AIzaSyAFrScEUoPW6ZBrHIvuAeEDsplHAqS_gl0';
 let pageToken;
-let prevPageToken;
-let nextPageToken;
+
 let query;
 
 $(document).ready(function () {
@@ -44,14 +43,15 @@ function queryOMDABPI_GETJQUERY(searchText) {
 }
 
 function updateMovieResults(data) {
-    console.log(data);
-    if (data.Response !== "False") {
-        $('.movie-information').html(`Movie Synopsis`);
-    
+    if (data.Response !== 'False') {
+        $('.movie-information').html('Movie Synopsis');
+
         clearErrorMessage();
         setMovieTitle(data.Title, data.Year);
         setMoviePosterImage(data.Poster);
         setMoviePlot(data.Plot);
+        setMovieRated(data.Rated);
+        setMovieRuntime(data.Runtime);
         setMovieActorsList(buildActorList(data.Actors.split(', ')));
         setupGAPIClient(); /* display youtube video */
     } else {
@@ -60,7 +60,7 @@ function updateMovieResults(data) {
     }
 }
 
-function clearAllDivs(){
+function clearAllDivs() {
     $('.movie-misc').empty();
     $('.movie-title').empty();
     $('.js-poster').empty();
@@ -68,6 +68,8 @@ function clearAllDivs(){
     $('.movie-description').empty();
     $('.video-container').empty();
     $('.movie-poster').empty();
+    $('.movie-rated').empty();
+    $('.movie-runtime').empty();
     $('.movie-actors').empty();
     $('.vid').empty();
     $('.img-link').empty();
@@ -75,33 +77,47 @@ function clearAllDivs(){
 }
 
 function setErrorMessage(errorMessage) {
-    $('.movie-misc').html(`<div class='error'>${errorMessage}</div>`);
+    $('.movie-title').html(`<div class='error'>${errorMessage} Please try again.</div>`);
 }
 
 function clearErrorMessage() {
-    $('.movie-misc').html(`<div class='error'></div>`);
+    $('.movie-title').html('<div class=\'error\'></div>');
 }
+
+
 
 function setMovieTitle(title, year) {
     $('.movie-title').html(`${title}  (${year})`);
 }
 
 function setMoviePosterImage(posterImage) {
-    $('.js-poster').html(`<img src='${posterImage} alt='movie poster' class='movie-poster'>`);
+    $('.js-poster').html(`<img src='${posterImage}' alt='movie-poster' class='movie-poster'>`);
 }
 
 function setMoviePlot(moviePlot) {
-    $('.movie-description').html(`<h4>Movie Plot</h4><div class='movie-plot'>${moviePlot}</div>`);
+    $('.movie-description').html(`<hr class='style-eight'><h4>Movie Plot</h4>${moviePlot}`);
+}
+
+function setMovieRated(rated) {
+    $('.movie-rated').html(`<hr class='style-eight'>Rating: ${rated}`);
+}
+
+function setMovieRuntime(runtime) {
+    $('.movie-runtime').html(`<hr class='style-eight'>Runtime: ${runtime}`);
 }
 
 function buildActorList(actors) {
-    let htmlText = "<ul><li><h4>Lead Actors</h4></li>";
+    let htmlText = '<h4>Lead Actors</h4>';
 
     for (let x = 0; x < actors.length; x++) {
-        htmlText = htmlText + "<li>" + actors[x] + "</li>";
+        if (x === 0) {
+            htmlText = htmlText + '<span class="actors-name">' + actors[x] + '</span>';
+        }
+        else {
+            htmlText = htmlText + '<span class="actors-name"> &bull; ' + actors[x] + '</span>';
+        }
     }
 
-    htmlText = htmlText + "</ul>";
     return htmlText;
 }
 
@@ -125,7 +141,7 @@ function makeRequest() {
 
 function getRequest(q, paramPart, paramMaxResults, paramPageToken) {
     return gapi.client.youtube.search.list({
-        q: q + " trailer" + " official",
+        q: q + ' trailer' + ' official',
         part: paramPart,
         pageToken: paramPageToken,
         maxResults: paramMaxResults
@@ -135,25 +151,23 @@ function getRequest(q, paramPart, paramMaxResults, paramPageToken) {
 
 function getResponse(request) {
     $('.video-container').empty();
-    let counter = 0;
+    //let counter = 0;
 
     request.execute(function (response) {
         let searchResults = response.result.items;
-        let vidtag = "";
+        //let vidtag = '';
         console.log(searchResults);
         resetVideoContainers();
 
         for (let counter = 0; counter < searchResults.length; counter++) {
             let item = searchResults[counter];
-             $('.video-container').append(`
-             <div class="vid">
+            $('.video-container').append(`
                 <div class='img-link'>
-                    <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">
-                        <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt=${item.snippet.description}">
+                    <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">            
+                        <img class="thumb" src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.description}">
                     </a>
                 </div>
                 <div class='title'>${item.snippet.title}</div>
-                </div>
                 `);
         }
     });
