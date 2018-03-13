@@ -1,0 +1,14 @@
+When the user enters the website
+
+When the user enters a valid movie title  =>  The user will see 3 columns of data
+	Column 1 =>  Lead Actors, Movie Plot; Rating; and Runtime
+	Column 2 = > Movie Poster
+	Column 3 =>  Youtube Movie Trailers
+		When the user clicks on the Youtube thumbnail  => Video opens in new window
+
+When the user enters a invalide movide title =>
+	The user sees a message =>  "Movie not found!  Please try again."
+
+Whent the user clicks submit without entering a movie title =>
+	The user sees a message => Something went wrong.  Please try again.
+	
