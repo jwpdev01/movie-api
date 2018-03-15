@@ -55,7 +55,6 @@ function updateMovieResults(data) {
         setMovieActorsList(buildActorList(data.Actors.split(', ')));
         setupGAPIClient(); /* display youtube video */
     } else {
-        console.log(data.Error);
         setErrorMessage(data.Error);
     }
 }
@@ -112,8 +111,7 @@ function buildActorList(actors) {
     for (let x = 0; x < actors.length; x++) {
         if (x === 0) {
             htmlText = htmlText + '<span class="actors-name">' + actors[x] + '</span>';
-        }
-        else {
+        } else {
             htmlText = htmlText + '<span class="actors-name"> &bull; ' + actors[x] + '</span>';
         }
     }
@@ -151,12 +149,9 @@ function getRequest(q, paramPart, paramMaxResults, paramPageToken) {
 
 function getResponse(request) {
     $('.video-container').empty();
-    //let counter = 0;
 
     request.execute(function (response) {
         let searchResults = response.result.items;
-        //let vidtag = '';
-        console.log(searchResults);
         resetVideoContainers();
 
         for (let counter = 0; counter < searchResults.length; counter++) {
