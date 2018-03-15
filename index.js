@@ -14,9 +14,13 @@ $(document).ready(function () {
 
 });
 
-getFieldValue = (fieldName) => $(fieldName).val();
+//let getFieldValue = (fieldName) => $(fieldName).val();
+function getFieldValue(fieldName) {
+    return $(fieldName).val();
+}
 
 function getAPIs(apiSearch) {
+    console.log('get apis');
     query = getFieldValue('.search-bar');
     if (apiSearch === 'ajax') {
         queryOMDBAPI_AJAX(query);
@@ -26,6 +30,7 @@ function getAPIs(apiSearch) {
 }
 
 function queryOMDBAPI_AJAX(searchText) {
+    console.log('query omd api ajax');
     $.ajax({
         url: OMDBAPI + searchText,
         dataType: 'json',
@@ -37,12 +42,14 @@ function queryOMDBAPI_AJAX(searchText) {
 }
 
 function queryOMDABPI_GETJQUERY(searchText) {
+    console.log('quer omd api get jquery');
     $.getJSON(OMDBAPI + searchText, function (data) {
         updateMovieResults(data);
     });
 }
 
 function updateMovieResults(data) {
+    console.log('update movie results');
     if (data.Response !== 'False') {
         $('.movie-information').html('Movie Synopsis');
 
@@ -60,6 +67,7 @@ function updateMovieResults(data) {
 }
 
 function clearAllDivs() {
+    console.log('clear all divs');
     $('.movie-misc').empty();
     $('.movie-title').empty();
     $('.js-poster').empty();
@@ -76,36 +84,44 @@ function clearAllDivs() {
 }
 
 function setErrorMessage(errorMessage) {
+    console.log('set error message');
     $('.movie-title').html(`<div class='error'>${errorMessage} Please try again.</div>`);
 }
 
 function clearErrorMessage() {
+    console.log('clear error message');
     $('.movie-title').html('<div class=\'error\'></div>');
 }
 
 
 
 function setMovieTitle(title, year) {
+    console.log('set movie title');
     $('.movie-title').html(`${title}  (${year})`);
 }
 
 function setMoviePosterImage(posterImage) {
+    console.log('set move poster image');
     $('.js-poster').html(`<img src='${posterImage}' alt='movie-poster' class='movie-poster'>`);
 }
 
 function setMoviePlot(moviePlot) {
+    console.log('set movie plot');
     $('.movie-description').html(`<hr class='style-eight'><h4>Movie Plot</h4>${moviePlot}`);
 }
 
 function setMovieRated(rated) {
+    console.log('set movie rated');
     $('.movie-rated').html(`<hr class='style-eight'>Rating: ${rated}`);
 }
 
 function setMovieRuntime(runtime) {
+    console.log('set move runtime');
     $('.movie-runtime').html(`<hr class='style-eight'>Runtime: ${runtime}`);
 }
 
 function buildActorList(actors) {
+    console.log('build actor list');
     let htmlText = '<h4>Lead Actors</h4>';
 
     for (let x = 0; x < actors.length; x++) {
@@ -120,6 +136,7 @@ function buildActorList(actors) {
 }
 
 function setMovieActorsList(actorsList) {
+    console.log('set movie actors list');
     $('.movie-actors').html(`<div class='movie-actors'>${actorsList}</div>`);
 }
 
